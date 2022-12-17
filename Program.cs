@@ -1,18 +1,39 @@
-﻿/*Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
+﻿//Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
 
 int CutNumber(int num)
 {
     int des = num % 100;
-    //int ed = num % 10;
 
-    int result = des / 10;// - ed;
+    int result = des / 10;
     return result;
 }
 
-int randNum = new Random().Next(100, 1000);
-int newNum = CutNumber(randNum);
+Console.WriteLine("Введите трехзначное число:");
+int userNum = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine($"New version of a number {randNum} is {newNum}");*/
+if (userNum >= 100 && userNum <1000)
+{
+    int newNum = CutNumber(userNum);
+    Console.WriteLine($"Second number is {newNum}");
+}
+else
+{
+    Console.WriteLine("Не верно указано трехзначное число. Попробуйте еще раз");
+}
 
-// Павел, нужна ли переменная "int ed" Или как я понимаю, только для более точных вычислений, так как десятичный остаток получается.//  
+/*// Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 
+Console.WriteLine("Введите число:  ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+int thirdNum = num;
+
+while (thirdNum >= 999)
+{
+    thirdNum = thirdNum / 10;
+    Console.WriteLine(thirdNum);
+}
+ 
+thirdNum = thirdNum % 10;
+Console.WriteLine(thirdNum);
+//Console.WriteLine(thirdNum);*/
